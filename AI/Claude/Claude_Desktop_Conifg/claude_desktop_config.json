@@ -1,0 +1,72 @@
+{
+  "preferences": {
+    "launchPreviewPersistedWorkspaces": [],
+    "launchPreviewSessionScopedSessions": [],
+    "coworkLegacyRootGrantsPruned": true,
+    "coworkScheduledTasksEnabled": false,
+    "ccdScheduledTasksEnabled": false,
+    "earlyWindowShowLatched": true,
+    "storeReadCacheLatched": true,
+    "coworkWebSearchEnabled": true,
+    "remoteToolsDeviceName": "winit-pc-desktop",
+    "epitaxyPrefs": {
+      "desktop-frame.paneStore.v1": {
+        "state": {
+          "extraPanesByMode": {},
+          "colWeightsByMode": {},
+          "rowSplit": 0.5,
+          "draftNonce": 0,
+          "lastPrimaryCodeSession": null
+        },
+        "version": 4
+      },
+      "starred-local-code-sessions": [],
+      "starred-cowork-spaces": [],
+      "starred-session-groups": [],
+      "starred-local-routines": [],
+      "dframe-group-scopes": {},
+      "dframe-local-slice": {
+        "pinnedOrder": [],
+        "homeProjectsPinnedOrder": []
+      },
+      "ccd-sessions-filter": {
+        "state": {
+          "selectedProjects": []
+        },
+        "version": 0
+      }
+    },
+    "windowsAppJobLatched": true,
+    "bypassPermissionsGateByAccount": {
+      "9fb5f64c-7b8d-4404-8d9f-631a68815ea1": false
+    },
+    "coworkHipaaRestricted": false,
+    "orgWorkAcrossAppsDisabled": true,
+    "coworkPreferredBrowser": "built_in",
+    "coworkBrowserToolsEnabled": false,
+    "coworkModelAutoFallbackByAccount": {
+      "9fb5f64c-7b8d-4404-8d9f-631a68815ea1": true
+    }
+  },
+  "mcpServers": {
+    "blender": {
+      "command": "uvx",
+      "args": ["blender-mcp"]
+    },
+    "unityMCP": {
+      "command": "C:\\Users\\User\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe\\uvx.exe",
+      "args": [
+        "--offline",
+        "--prerelease",
+        "explicit",
+        "--from",
+        "mcpforunityserver>=0.0.0a0",
+        "mcp-for-unity",
+        "--transport",
+        "stdio"
+      ],
+      "type": "stdio"
+    }
+  },
+  "coworkUserFilesPath": "C:\\Users\\User\\Claude"
+}

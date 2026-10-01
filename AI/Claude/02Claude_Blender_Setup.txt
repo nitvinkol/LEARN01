@@ -1,0 +1,117 @@
+***** Claude and Unity Setup *****
+( Documentation Date: 01-Oct-2026 )
+Blender Version 5.2.2 LTS
+-----------------------------------------------------------------------------------
+Here's how to connect them using the open-source BlenderMCP project. 
+MCP servers that run locally work in Claude Desktop, but the free plan has tighter message limits, so long scene-building sessions may hit them sooner.
+
+1. Install the prerequisites
+
+Install Blender 3.0 or newer
+
+Install the UV Package Manager
+Windows (PowerShell): 
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+If you get an execution policy error just means Windows is blocking PowerShell scripts, which stops the uv installer from running. It's a one-time fix.
+
+In order to allow scripts for your user account
+
+Open PowerShell (a normal window is fine, no need for admin) and run:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+-----------------------------------------------------------------------------------
+Run the uv installer again in Powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+Close and reopen PowerShell, then check it worked
+uv --version
+
+-----------------------------------------------------------------------------------
+2. Install the Blender add-on
+
+Download addon.py from the BlenderMCP GitHub repo.
+https://github.com/ahujasid/mcp-for-blender
+
+In Blender, go to Edit → Preferences → Add-ons → Install from Disk, then pick addon.py.
+
+Tick the checkbox to enable "Interface: Blender MCP".
+
+-----------------------------------------------------------------------------------
+3. Configure Claude Desktop
+
+Open Claude Desktop → Settings → Developer → Edit Config. This opens claude_desktop_config.json.
+
+Add this:
+
+json
+{
+  "mcpServers": {
+    "blender": {
+      "command": "uvx",
+      "args": ["blender-mcp"]
+    }
+  }
+}
+
+Save, then fully quit and reopen Claude Desktop. On Windows, closing the window isn't enough, so quit it from the system tray.
+
+If Claude can't find uvx, replace "uvx" with the full path to it (for example C:\\Users\\YourName\\.local\\bin\\uvx.exe on Windows).
+
+This can be found out by running the command in terminal
+where.exe uvx
+
+Then paste that path into the config, remembering to double the backslashes:
+"command": "C:\\Users\\YourName\\.local\\bin\\uvx.exe"
+
+-----------------------------------------------------------------------------------
+4. Start the connection
+
+In Blender's 3D viewport, press N to open the sidebar and find the BlenderMCP tab.
+
+Click Connect to Claude. This starts a local server on port 9876.
+
+In Claude Desktop, check that a "blender" tool appears in the tools/connectors menu below the chat box.
+
+Start with something like: "Create a low-poly scene with a small house, a tree, and a ground plane, with warm sunset lighting." Then refine step by step.
+
+-----------------------------------------------------------------------------------
+Tips
+
+Keep requests small and iterative. Big, complex prompts fail more often.
+
+If a command errors out, just ask again. The first call sometimes fails.
+
+Save your .blend file often, since Claude executes Python inside Blender.
+
+Only run one MCP instance at a time (for example, not Cursor and Claude Desktop together).
+
+The add-on also has optional integrations (Poly Haven assets, Hyper3D) that you can enable in the same Blender panel.
+
+-----------------------------------------------------------------------------------
+Few prompts to try out
+
+Create a wizard standing in front of a small stone tower at night. Add a pointed hat, a robe, a glowing staff, a moon, and stars.
+
+Make a pirate character standing on a wooden dock with a barrel, a treasure chest, and sunset lighting.
+
+Place three characters in a line, a tall one, a medium one, and a small one, each a different color, on a studio backdrop with a three-point light setup.
+
+
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

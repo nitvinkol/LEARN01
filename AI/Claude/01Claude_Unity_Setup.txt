@@ -1,0 +1,64 @@
+***** Claude and Unity Setup *****
+( Documentation Date: 01-Oct-2026 )
+Unity Version 6000.3.25f1
+
+-------------------------------------------------------------------------------------
+Install: Community "MCP for Unity"
+
+It's open source.
+
+Install Python 3.10+ and uv. The setup wizard guides you through both if they're missing. 
+
+-------------------------------------------------------------------------------------
+
+winget install --id Python.Python.3.12 -e
+winget install --id astral-sh.uv -e
+
+If you don't have winget, you can install uv with this instead in Powershell:
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+-------------------------------------------------------------------------------------
+*** Verify ***
+
+python --version
+uv --version
+uvx --version
+
+-------------------------------------------------------------------------------------
+
+In Unity, open Package Manager > Add package from git URL and paste 
+https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity.
+
+Open Window > MCP for Unity > Local Setup Window, 
+
+Click Next and Configure MCP Clients
+select CodeBuddy CLI and VSCode GitHub Copilot
+and click Configure Selected
+
+Open Window > MCP for Unity > Toggle MCP Window
+Click Start Server
+
+Restart Claude Desktop and Have Pro Subscription for asking Claude to make something in Unity
+
+
+-------------------------------------------------------------------------------------
+Unity is set to Transport: HTTP Local at 127.0.0.1:8080, so its session registered with that HTTP server.
+Claude Desktop only supports stdio, so it launches its own separate MCP server process. That process never sees the Unity session registered on port 8080, which would explain "No Unity instances are currently connected."
+
+In the MCP for Unity window, Window > MCP for Unity > Toggle MCP Window
+
+change Transport from HTTP Local to Stdio.
+
+If the HTTP server is still running, click Stop Server first.
+
+Under Client Configuration, select Claude Desktop and click Configure again (or Unregister, then Configure) so the config is rewritten for stdio.
+
+Fully quit Claude Desktop (check the system tray/menu bar, not just the window) and reopen it.
+
+In Unity, make sure the status shows a session or connection again. If you see a Connect or Start Session button, click it.
+
+Start a new chat in Claude Desktop and ask it to create a new gameobject in Unity scene.
+
+
+-------------------------------------------------------------------------------------
