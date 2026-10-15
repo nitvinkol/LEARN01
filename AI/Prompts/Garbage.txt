@@ -1,0 +1,4 @@
+I want you to create a 2D Unity Casual Puzzle game about a garbage sorting and collection theme where the there is a goal for the number of items to be collected. In this, the items will come down from top as a group, the number of items and the type should be configurable by the designer. The gameplay mechanics is such that there will be multiple groups of items that will fall from top like a typical garbage bag, now we have to click on those items to separate it from the group as per the goal, once the required items are collected, it will merge into a new product in the bottom, like a reuse product. Add particle fx and animations for this game.
+
+This is supposed to be a mobile game, make it into a mobile game format and instead of suitcase shape, it should be trash bag shape with trash item in random rotation and order, like a typical garbage bag. Also there should be limited number of trash bags, it should not continuously keep coming
+
