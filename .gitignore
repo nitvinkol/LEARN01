@@ -1,0 +1,36 @@
+# Put this file in the Unity project root, next to Assets/ and ProjectSettings/.
+
+# Unity caches, local settings, and build output
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+
+# Unity captures and memory snapshots
+/[Rr]ecordings/
+/[Mm]emoryCaptures/
+
+# Generated IDE files and local IDE settings
+/.vs/
+/.idea/
+/*.csproj
+/*.sln
+/*.slnx
+/*.user
+/*.userprefs
+/*.DotSettings.user
+*.csproj.user
+
+# Generated Addressables editor data
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/[Ss]treamingAssets/aa/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep Assets/, Packages/, ProjectSettings/, and Unity .meta files in Git.

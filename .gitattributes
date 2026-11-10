@@ -1,0 +1,23 @@
+# Normalize detected text to LF. Let Git detect mixed-format Unity files
+# such as .asset, which may contain either YAML or binary data.
+* text=auto eol=lf
+
+# Use CRLF in the working tree for Windows batch scripts.
+*.[bB][aA][tT] text=auto eol=crlf
+*.[cC][mM][dD] text=auto eol=crlf
+
+# Treat common binary assets as binary for line endings, diffs, and merges.
+*.[pP][nN][gG] binary -eol
+*.[jJ][pP][gG] binary -eol
+*.[jJ][pP][eE][gG] binary -eol
+*.[gG][iI][fF] binary -eol
+*.[pP][sS][dD] binary -eol
+*.[eE][xX][rR] binary -eol
+*.[wW][aA][vV] binary -eol
+*.[mM][pP]3 binary -eol
+*.[oO][gG][gG] binary -eol
+*.[mM][pP]4 binary -eol
+*.[gG][lL][bB] binary -eol
+*.[dD][lL][lL] binary -eol
+*.[zZ][iI][pP] binary -eol
+*.unitypackage binary -eol
